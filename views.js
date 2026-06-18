@@ -16,7 +16,10 @@ const Renderer = function () {
         quote.textContent = quoteData.quote
     }
     const renderPokemon = function (pokemonData) {
-        
+        const pokemonName = document.querySelector("#pokemone-name")
+        const pokemonImg = document.querySelector("#pokemonImg")
+        pokemonImg.src = pokemonData.pokemonImgUrl
+        pokemonName.textContent = pokemonData.pokemonName
     }
 
     // Return the public method
