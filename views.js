@@ -1,4 +1,5 @@
 
+
 const Renderer = function () {
     // 2. Main rendering function
     const renderUser = function (userData) {
@@ -21,11 +22,28 @@ const Renderer = function () {
         pokemonImg.src = pokemonData.pokemonImgUrl
         pokemonName.textContent = pokemonData.pokemonName
     }
-
-    // Return the public method
+    const renderMeatQuote = function (meatData) {
+        const meatQuote = document.querySelector("#meatQuote")
+        meatQuote.textContent = meatData
+    }
+    const renderSixFriends = function(sixFriendsData){
+        const sixFriends = sixFriendsData
+        const friendsContainer = document.querySelector("#friendsContainer")
+        friendsContainer.innerHTML =""
+        for(let f of sixFriends){
+            const friendSelector = document.createElement("div")
+            friendSelector.textContent=f
+            friendsContainer.append(friendSelector)
+        }
+        
+    }
+   
+    
     return {
         renderUser: renderUser,
         renderQuote: renderQuote,
-        renderPokemon: renderPokemon
+        renderPokemon: renderPokemon,
+        renderMeatQuote: renderMeatQuote,
+        renderSixFriends: renderSixFriends
     }
 }
