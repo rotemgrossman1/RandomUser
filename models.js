@@ -27,18 +27,19 @@ const Model = function(){
         const quote = response.data
         return quote
     }
+
+    async function getRandPokemon() {
+        let random = Math.floor(Math.random()*1025)
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon/${random}/");
+        const pokemon = response.data
+        console.log(pokemon)
+    }
     return {
-        getRandUsr, getRandQuote
+        getRandUsr, getRandQuote, getRandPokemon
     }
 }  
 
-// $.ajax({
-//   url: 'https://api.kanye.rest',
-//   dataType: 'json',
-//   success: function(data) {
-//     console.log(data);
-//   }
-// });
+
 
 
 // let random = Math.floor(Math.random()*1025)

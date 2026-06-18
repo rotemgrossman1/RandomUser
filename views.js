@@ -15,10 +15,14 @@ const Renderer = function () {
         const quote = document.querySelector("#quote")
         quote.textContent = quoteData.quote
     }
+    const renderPokemon = function (pokemonData) {
+
+    }
 
     // Return the public method
     return {
         renderUser: renderUser,
-        renderQuote: renderQuote
+        renderQuote: renderQuote,
+        renderPokemon: renderPokemon
     }
 }
