@@ -6,8 +6,6 @@
 //   }
 // });
 const Model = function(){
-
-
     async function getRandUsr() {
         const response = await axios.get("https://randomuser.me/api/");
         const user = response.data
@@ -21,11 +19,16 @@ const Model = function(){
             userAdress: `${userCity}, ${userState}`,
             pictureUrl: userPictureUrl
         }
-
         return userData
     }
+
+    async function getRandQuote() {
+        const response = await axios.get("https://api.kanye.rest");
+        const quote = response.data
+        return quote
+    }
     return {
-        getRandUsr
+        getRandUsr, getRandQuote
     }
 }  
 

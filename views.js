@@ -2,8 +2,6 @@
 const Renderer = function () {
     // 2. Main rendering function
     const renderUser = function (userData) {
-        console.log("This is the data arriving at the renderer:", userData);
-        // $("#userContainer").empty()
         const userImg = document.querySelector("#userImg")
         const userName = document.querySelector("#userName")
         const userAdress = document.querySelector("#userAdress")
@@ -13,9 +11,14 @@ const Renderer = function () {
         userAdress.textContent = userData.userAdress
 
     }
+    const renderQuote = function (quoteData) {
+        const quote = document.querySelector("#quote")
+        quote.textContent = quoteData.quote
+    }
 
     // Return the public method
     return {
-        renderUser: renderUser
+        renderUser: renderUser,
+        renderQuote: renderQuote
     }
 }
