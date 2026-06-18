@@ -16,7 +16,7 @@ const Renderer = function () {
         quote.textContent = quoteData.quote
     }
     const renderPokemon = function (pokemonData) {
-
+        
     }
 
     // Return the public method

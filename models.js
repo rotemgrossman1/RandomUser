@@ -30,9 +30,18 @@ const Model = function(){
 
     async function getRandPokemon() {
         let random = Math.floor(Math.random()*1025)
-        const response = await axios.get("https://pokeapi.co/api/v2/pokemon/${random}/");
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
         const pokemon = response.data
-        console.log(pokemon)
+        const pokemonName = pokemon.name
+        const pokemonImgUrl = pokemon.sprites.front_default 
+        //console.log(pokemon)
+        //console.log(pokemonName)
+        //console.log(pokemonImgUrl)
+        const pokemonDetails = {
+            pokemonName: pokemonName,
+            pokemonImgUrl: pokemonImgUrl
+        }
+        return pokemonDetails
     }
     return {
         getRandUsr, getRandQuote, getRandPokemon
